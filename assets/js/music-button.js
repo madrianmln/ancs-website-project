@@ -17,13 +17,15 @@ var controlBtn = document.getElementById('play-pause');
 function playPause() {
     if (track.paused) {
         track.play();
-        track2.play();
-        //controlBtn.textContent = "Pause";
+        if (!ancModeToggle.checked) {
+            track2.play();
+        }
         controlBtn.className = "pause";
     } else { 
         track.pause();
-        track2.pause();
-         //controlBtn.textContent = "Play";
+        if (!ancModeToggle.checked) {
+            track2.pause();
+        }
         controlBtn.className = "play";
     }
 }
