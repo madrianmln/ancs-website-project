@@ -1,0 +1,414 @@
+.bg-vyatta{
+    background-color: #ffdf00 !important;
+}
+.navbar-brand-ancs{
+    font-weight: 500;
+}
+/* @media only screen and (min-width: 850px)  {
+    .navbar-main{
+        padding-left: 180px !important;
+        padding-right: 180px !important;
+    }
+} */
+.navbar-vyatta img{
+    width: 166px;
+    height: 47.352px;
+}
+.anc-logo{
+    height: 40px;
+}
+.navbar-nav-ancs .nav-link{
+    margin: auto 15px auto 15px;
+}
+.buy-button-ancs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white !important;
+    background-color: #E71D29 !important;
+    text-decoration: none;
+    width: 100px;
+    border-radius: 20px;
+}
+
+/* Banner */
+.anc-s-main-banner{
+    margin-bottom: 4%;
+}
+.banner img{
+    width: 100%;
+}
+.row-main-banner{
+    width: 100%;
+}
+
+/* ANC FEATURE */
+.anc-feature-box{
+    margin: auto 100px;
+}
+.anc-feature-box .row{
+    width: 100%;
+}
+.anc-feature-music{
+    border-radius: 28px;
+    background-image: url('../img/anc-feature.png');
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+.music-box{
+    margin: 2%;
+    padding: 2% 5% 2% 2%;
+    background-color: #E0E4EF;
+    border-radius: 28px;
+}
+.music-box-title{
+    display: flex;
+    justify-content: space-between;
+}
+/* ON OFF Music Button */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #1bd35b;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #1bd35b;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+/* .anc-feature img{
+    border-radius: 28px;
+    width: 100%;
+} */
+.earbuds-display{
+    border-radius: 28px;
+    background-color: #E0E4EF;
+}
+.earbuds-display-title{
+    display: flex;
+    justify-content: center;
+}
+.earbuds-display .title{
+    margin: 13% auto 15% auto;
+    height: 7%;
+    width: 90%;
+}
+.earbuds-display-anc-close{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 263px;
+    height: 250px;
+    margin-bottom: 20%;
+}
+.earbuds-display .anc-close{
+    position: absolute;
+    height: 250px;
+    left: 30%;
+    transition: opacity 0.3s ease;
+}
+.earbuds-display .anc-open{
+    position: absolute;
+    height: 250px;
+    left: 30%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.earbuds-display-anc-close:hover .anc-close {
+    opacity: 0; /* Menghilangkan gambar 1 saat dihover */
+}
+  
+.earbuds-display-anc-close:hover .anc-open{
+    opacity: 1; /* Menampilkan gambar B saat dihover */
+}
+.earbuds-display-anc-close:hover .left-earbud{
+    opacity: 1; /* Menampilkan earbud saat dihover */
+    top: -25%;
+    transform: rotate(0deg);
+}
+.earbuds-display-anc-close:hover .right-earbud{
+    opacity: 1; /* Menampilkan earbud saat dihover */
+    top: -25%;
+    transform: rotate(0deg);
+}
+/* .earbuds img{
+    position: absolute;
+    width: 50px;
+} */
+.earbuds-display .left-earbud{
+    position: absolute;
+    width: 145px;
+    left: 26%;
+    transform: rotate(15deg);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.earbuds-display .right-earbud{
+    position: absolute;
+    width: 145px;
+    left: 80%;
+    transform: rotate(-15deg);
+    opacity: 0;
+    z-index: 99;
+    transition: opacity 0.3s ease;
+}
+@media only screen and (max-width: 1399px) {
+    .earbuds-display-anc-close{
+        height: 200px;
+    }
+    .earbuds-display .anc-close{
+        height: 200px;
+        left: 30%;
+    }
+    .earbuds-display .anc-open{
+        height: 200px;
+        left: 30%;
+    }
+    .earbuds-display .left-earbud{
+        width: 120px;
+    }
+    .earbuds-display .right-earbud{
+        width: 120px;
+        left: 70%;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .earbuds-display-anc-close{
+        height: 200px;
+    }
+    .earbuds-display .anc-close{
+        height: 200px;
+    }
+    .earbuds-display .anc-open{
+        height: 200px;
+    }
+}
+@media only screen and (max-width: 1199px) {
+    .earbuds-display-anc-close{
+        height: 200px;
+    }
+    .earbuds-display .anc-close{
+        height: 200px;
+        left: 16%;
+    }
+    .earbuds-display .anc-open{
+        height: 200px;
+        left: 16%;
+    }
+    .earbuds-display .left-earbud{
+        width: 120px;
+        left: 10%;
+    }
+    .earbuds-display .right-earbud{
+        width: 120px;
+        left: 56%;
+    }
+}
+@media only screen and (max-width: 991px) {
+    .earbuds-display-anc-close{
+        height: 150px;
+    }
+    .earbuds-display .anc-close{
+        height: 150px;
+        left: 11%;
+    }
+    .earbuds-display .anc-open{
+        height: 150px;
+        left: 11%;
+    }
+    .earbuds-display .left-earbud{
+        width: 90px;
+        left: 7%;
+    }
+    .earbuds-display .right-earbud{
+        width: 90px;
+        left: 41%;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .earbuds-display-anc-close{
+        height: 100px;
+    }
+    .earbuds-display .anc-close{
+        height: 100px;
+    }
+    .earbuds-display .anc-open{
+        height: 100px;
+    }
+    .earbuds-display .left-earbud{
+        width: 60px;
+        left: 7%;
+    }
+    .earbuds-display .right-earbud{
+        width: 60px;
+        left: 32%;
+    }
+}
+
+/* ALL FEATURE */
+.all-feature{
+    padding-bottom: 5%;
+}
+.all-feature .title-box{
+    display: flex;
+    justify-content: center;
+}
+.all-feature .title{
+    padding: 5% 50px 5% 4%;
+    width: 70%;
+}
+.db-anc-mode, .mics-anc, .hours-total-time{
+    border-radius: 28px;
+    background-color: #E0E4EF;
+    border: 3px white solid;
+}
+/* dB ANC Mode */
+.db-anc-mode-img{
+    display: flex;
+    justify-content: center;
+}
+.db-anc-mode img{
+    width: 200px;
+    margin: 10%;
+}
+.db-anc-mode-title{
+    display: flex;
+    justify-content: center;
+}
+.db-anc-mode-title h3{
+    font-weight: 800;
+    text-align: center;
+}
+.db-anc-mode-desc{
+    display: flex;
+    justify-content: center;
+}
+.db-anc-mode-desc p{
+    width: 80%;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+/* Mics ANC */
+.mics-anc-img{
+    display: flex;
+    justify-content: center;
+}
+.mics-anc img{
+    width: 200px;
+    margin: 16.6% 10%;
+}
+.mics-anc-title{
+    display: flex;
+    justify-content: center;
+}
+.mics-anc-title h3{
+    font-weight: 800;
+    text-align: center;
+}
+.mics-anc-desc{
+    display: flex;
+    justify-content: center;
+}
+.mics-anc-desc p{
+    width: 80%;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+/* Hours Total Time */
+.hours-total-time-img{
+    display: flex;
+    justify-content: center;
+}
+.hours-total-time img{
+    width: 200px;
+    margin: 21% 10%;
+}
+.hours-total-time-title{
+    display: flex;
+    justify-content: center;
+}
+.hours-total-time-title h3{
+    font-weight: 800;
+    text-align: center;
+}
+.hours-total-time-desc{
+    display: flex;
+    justify-content: center;
+}
+.hours-total-time-desc p{
+    width: 80%;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Reason to Buy */
+/* .reason img{
+    height: 250px;
+} */
+
+/* TWS Open Close Container */
+/* .tws-open-close{
+    background-color: rgb(35, 35, 35);
+}
+.anc-s-oc-title{
+    color: white;
+}
+.anc-s{
+    width: 500px;
+    margin: 50px;
+    border-radius: 100%;
+} */
