@@ -38,27 +38,13 @@ track.addEventListener("ended", function() {
 var ancModeToggle = document.querySelector('.switch input[type="checkbox"]');
 var isTrack2Playing = false;
 
-// ancModeToggle.addEventListener('change', function() {
-//     if (this.checked) {
-//         if (!track2.paused) {
-//             ancOn.play();
-//             track2.pause();
-//             isTrack2Playing = true;
-//         }
-//     } else {
-//         if (isTrack2Playing) {
-//             ancOff.play();
-//             track2.play();
-//             isTrack2Playing = false;
-//         }
-//     }
-// });
 ancModeToggle.addEventListener('change', function() {
     if (this.checked) {
         ancOn.play();
         track.play();
         if (track2.play) {
             track2.pause();
+            track.volume = 0.7;
         }
         controlBtn.className = "pause";
     } else {
@@ -66,6 +52,7 @@ ancModeToggle.addEventListener('change', function() {
         track2.play();
         if (controlBtn.className = "play"){
             track.play();
+            track.volume = 0.5;
             controlBtn.className = "pause";
         }
         // controlBtn.className = "play";
