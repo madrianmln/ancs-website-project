@@ -410,46 +410,46 @@ const layerImage = {
   408: 'assets/img/Website/0408.png',
   409: 'assets/img/Website/0409.png',
   410: 'assets/img/Website/0410.png',
-  411: 'assets/img/Website/0411.png',
-  412: 'assets/img/Website/0412.png',
-  413: 'assets/img/Website/0413.png',
-  414: 'assets/img/Website/0414.png',
-  415: 'assets/img/Website/0415.png',
-  416: 'assets/img/Website/0416.png',
-  417: 'assets/img/Website/0417.png',
-  418: 'assets/img/Website/0418.png',
-  419: 'assets/img/Website/0419.png',
-  420: 'assets/img/Website/0420.png',
-  421: 'assets/img/Website/0421.png',
-  422: 'assets/img/Website/0422.png',
-  423: 'assets/img/Website/0423.png',
-  424: 'assets/img/Website/0424.png',
-  425: 'assets/img/Website/0425.png',
-  426: 'assets/img/Website/0426.png',
-  427: 'assets/img/Website/0427.png',
-  428: 'assets/img/Website/0428.png',
-  429: 'assets/img/Website/0429.png',
-  430: 'assets/img/Website/0430.png',
-  431: 'assets/img/Website/0431.png',
-  432: 'assets/img/Website/0432.png',
-  433: 'assets/img/Website/0433.png',
-  434: 'assets/img/Website/0434.png',
-  435: 'assets/img/Website/0435.png',
-  436: 'assets/img/Website/0436.png',
-  437: 'assets/img/Website/0437.png',
-  438: 'assets/img/Website/0438.png',
-  439: 'assets/img/Website/0439.png',
-  440: 'assets/img/Website/0440.png',
-  441: 'assets/img/Website/0441.png',
-  442: 'assets/img/Website/0442.png',
-  443: 'assets/img/Website/0443.png',
-  444: 'assets/img/Website/0444.png',
-  445: 'assets/img/Website/0445.png',
-  446: 'assets/img/Website/0446.png',
-  447: 'assets/img/Website/0447.png',
-  448: 'assets/img/Website/0448.png',
-  449: 'assets/img/Website/0449.png',
-  450: 'assets/img/Website/0450.png',
+  // 411: 'assets/img/Website/0411.png',
+  // 412: 'assets/img/Website/0412.png',
+  // 413: 'assets/img/Website/0413.png',
+  // 414: 'assets/img/Website/0414.png',
+  // 415: 'assets/img/Website/0415.png',
+  // 416: 'assets/img/Website/0416.png',
+  // 417: 'assets/img/Website/0417.png',
+  // 418: 'assets/img/Website/0418.png',
+  // 419: 'assets/img/Website/0419.png',
+  // 420: 'assets/img/Website/0420.png',
+  // 421: 'assets/img/Website/0421.png',
+  // 422: 'assets/img/Website/0422.png',
+  // 423: 'assets/img/Website/0423.png',
+  // 424: 'assets/img/Website/0424.png',
+  // 425: 'assets/img/Website/0425.png',
+  // 426: 'assets/img/Website/0426.png',
+  // 427: 'assets/img/Website/0427.png',
+  // 428: 'assets/img/Website/0428.png',
+  // 429: 'assets/img/Website/0429.png',
+  // 430: 'assets/img/Website/0430.png',
+  // 431: 'assets/img/Website/0431.png',
+  // 432: 'assets/img/Website/0432.png',
+  // 433: 'assets/img/Website/0433.png',
+  // 434: 'assets/img/Website/0434.png',
+  // 435: 'assets/img/Website/0435.png',
+  // 436: 'assets/img/Website/0436.png',
+  // 437: 'assets/img/Website/0437.png',
+  // 438: 'assets/img/Website/0438.png',
+  // 439: 'assets/img/Website/0439.png',
+  // 440: 'assets/img/Website/0440.png',
+  // 441: 'assets/img/Website/0441.png',
+  // 442: 'assets/img/Website/0442.png',
+  // 443: 'assets/img/Website/0443.png',
+  // 444: 'assets/img/Website/0444.png',
+  // 445: 'assets/img/Website/0445.png',
+  // 446: 'assets/img/Website/0446.png',
+  // 447: 'assets/img/Website/0447.png',
+  // 448: 'assets/img/Website/0448.png',
+  // 449: 'assets/img/Website/0449.png',
+  // 450: 'assets/img/Website/0450.png',
 };
 
 // const layerImage = {
@@ -905,6 +905,7 @@ const layerImage = {
 //   450: 'https://ik.imagekit.io/usg7970jp2/ANCS%203D/0450.png',
 // };
 
+
 // Preload images
 const preloadedImages = [];
 for (let key in layerImage) {
@@ -913,37 +914,103 @@ for (let key in layerImage) {
   preloadedImages.push(img);
 }
 
-function checkScroll() {
-  const scrollBoxOffset = $('.scroll-box').offset().top;
-  const windowHeight = $(window).height();
-  const scrollPosition = $(window).scrollTop();
+$(document).ready(() => {
+  // Tambahkan variabel global untuk menandai apakah gambar pertama sudah ditampilkan
+  let isFirstImageDisplayed = false;
+  let isLogoHidden = false;
+  let isTaglineHidden = false;
+  let isDescHidden = false;
 
-  // Check if scroll-box is in the viewport
-  if (scrollPosition + windowHeight > scrollBoxOffset) {
-    const y = scrollPosition - scrollBoxOffset;
-    const scrollPixels = Math.min(Math.floor(y / 100) + 1, 450);
-    const imageToUse = layerImage[scrollPixels];
-    // Change the background image
-    $('.imageBox').css('background-image', `url('${imageToUse}')`);
+  function checkScroll() {
+    const scrollBoxOffset = $('.scroll-box').offset().top;
+    const windowHeight = $(window).height();
+    const scrollPosition = $(window).scrollTop();
 
-    // Check if it's time to fix imageBox position
-    if (scrollPixels > 0 && scrollPixels < 450) {
-      $('.imageBox').css({
-        'position': 'fixed',
-        'top': '50%',
-        'left': '50%',
-        'transform': 'translate(-50%, -50%)',
-      });
-    } else {
-      $('.imageBox').css({
-        'position': 'absolute',
-        'top': '50%',
-        'left': '50%',
-        'transform': 'translate(-50%, -50%)',
-      });
+    // Check if scroll-box is in the viewport
+    if (scrollPosition + windowHeight > scrollBoxOffset) {
+      const y = scrollPosition - scrollBoxOffset;
+      const scrollPixels = Math.min(Math.floor(y / 100) + 1, 450);
+      const imageToUse = layerImage[scrollPixels];
+
+      // Change the background image
+      $('.imageBox').css('background-image', `url('${imageToUse}')`);
+
+      // Check if it's time to fix imageBox position
+      if (scrollPixels > 0 && scrollPixels < 450) {
+        $('.imageBox').css({
+          'position': 'fixed',
+          'top': '50%',
+          'left': '50%',
+          'transform': 'translate(-50%, -50%)',
+        });
+
+        // Terapkan efek fade-in hanya untuk gambar pertama
+        if (!isFirstImageDisplayed && scrollPixels === 1) {
+          isFirstImageDisplayed = true;
+          $('.anc-logo-on-scroll').hide().fadeIn(1000); // Efek fade-in
+        }
+
+        // Munculkan kembali gambar dengan kelas "anc-logo-on-scroll" saat berada di lapisan 1-31
+        if (scrollPixels >= 1 && scrollPixels <= 27 && isLogoHidden) {
+          $('.anc-logo-on-scroll').fadeIn(150); // Efek fade-in
+          isLogoHidden = false;
+        }
+        // Menghilangkan gambar dengan kelas "anc-logo-on-scroll" saat mencapai lapisan ke-32
+        if (scrollPixels >= 28) {
+          $('.anc-logo-on-scroll').fadeOut(140); // Efek fade-out
+          isLogoHidden = true;
+        }
+
+        // Tampilkan "anc-tagline-on-scroll" dan "anc-desc-on-scroll" saat di layer 265-410
+        if (scrollPixels >= 265 && scrollPixels <= 410) {
+          if (isTaglineHidden) {
+            $('.anc-tagline-on-scroll').css('opacity', 1);
+            $('.anc-tagline-on-scroll').fadeIn(150); // Efek fade-in
+            isTaglineHidden = false;
+          }
+        } else {
+          // Sembunyikan "anc-tagline-on-scroll" dan "anc-desc-on-scroll" di luar rentang 265-410
+          if (!isTaglineHidden) {
+            $('.anc-tagline-on-scroll').fadeOut(150); // Efek fade-out
+            isTaglineHidden = true;
+          }
+        }
+        // ANC DESCRIPTION ON SCROLL
+        // Tampilkan "anc-tagline-on-scroll" dan "anc-desc-on-scroll" saat di layer 265-410
+        if (scrollPixels >= 340 && scrollPixels <= 410) {
+          if (isDescHidden) {
+            $('.anc-desc-on-scroll').css('opacity', 1);
+            $('.anc-desc-on-scroll').fadeIn(150); // Efek fade-in
+            isDescHidden = false;
+          }
+        } else {
+          // Sembunyikan "anc-tagline-on-scroll" dan "anc-desc-on-scroll" di luar rentang 265-410
+          if (!isDescHidden) {
+            $('.anc-desc-on-scroll').fadeOut(150); // Efek fade-out
+            isDescHidden = true;
+          }
+        }
+      } else {
+        // Gambar terakhir tetap sebagai latar belakang .imageBox saat discroll ke bawah
+        $('.imageBox').css({
+          'position': 'absolute',
+          'top': '50%',
+          'left': '50%',
+          'transform': 'translate(-50%, -50%)',
+        });
+      }
     }
   }
-}
+
+  // Panggil checkScroll saat halaman dimuat
+  checkScroll();
+
+  $(window).scroll(() => {
+    checkScroll();
+  });
+});
+
+
 
 $(document).ready(() => {
   // Panggil checkScroll saat halaman dimuat
